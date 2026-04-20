@@ -1,0 +1,11 @@
+k = int(input())
+rooms = list(map(int, input().split()))
+
+# Create a set to get unique room numbers
+unique_rooms = set(rooms)
+
+# Calculate using the math formula
+# The result of the division is always a whole number
+captain_room = (sum(unique_rooms) * k - sum(rooms)) // (k - 1)
+
+print(captain_room)

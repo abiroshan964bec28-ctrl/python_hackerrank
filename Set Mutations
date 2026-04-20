@@ -1,0 +1,25 @@
+# Read input
+n = int(input())
+A = set(map(int, input().split()))
+num_commands = int(input())
+
+for _ in range(num_commands):
+    # Read the command name and the number of elements in the second set
+    command_input = input().split()
+    command_name = command_input[0]
+    
+    # Read the second set B
+    B = set(map(int, input().split()))
+    
+    # Perform the corresponding set operation
+    if command_name == "update":
+        A.update(B)
+    elif command_name == "intersection_update":
+        A.intersection_update(B)
+    elif command_name == "difference_update":
+        A.difference_update(B)
+    elif command_name == "symmetric_difference_update":
+        A.symmetric_difference_update(B)
+
+# Output the sum of the remaining elements in set A
+print(sum(A))

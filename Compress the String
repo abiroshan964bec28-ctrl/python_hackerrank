@@ -1,0 +1,16 @@
+from itertools import groupby
+
+# Read the input string S
+S = input().strip()
+
+# Use groupby to group consecutive identical characters
+# k is the character (key), and g is the group (iterator)
+result = []
+for k, g in groupby(S):
+    # Count the number of items in the group
+    count = len(list(g))
+    # Append the formatted tuple as a string
+    result.append(f"({count}, {k})")
+
+# Print all results joined by a single space
+print(" ".join(result))

@@ -1,0 +1,8 @@
+import cmath
+
+# Input format: a complex number like '1+2j'
+z = complex(input())
+
+# Output r and phi on separate lines
+print(abs(z))
+print(cmath.phase(z))

@@ -1,0 +1,13 @@
+# Step 1: Read x and k from the first line
+x, k = map(int, input().split())
+
+# Step 2: Read the polynomial string
+polynomial = input()
+
+# Step 3: Evaluate the polynomial using the value of x
+# eval() runs the string as if it were a line of code
+result = eval(polynomial)
+
+# Step 4: Compare the result to k and print the boolean (True/False)
+print(result == k)
+

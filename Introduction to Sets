@@ -1,0 +1,14 @@
+def average(array):
+    # 1. Convert the list to a set to remove duplicates
+    distinct_heights = set(array)
+    
+    # 2. Calculate the sum of distinct heights
+    total_sum = sum(distinct_heights)
+    
+    # 3. Find the number of distinct heights
+    count = len(distinct_heights)
+    
+    # 4. Calculate and return the average
+    return total_sum / count
+
+

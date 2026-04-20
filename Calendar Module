@@ -1,0 +1,10 @@
+import calendar
+
+# 1. Read the space-separated month, day, and year
+m, d, y = map(int, input().split())
+
+# 2. Get the index of the day (0 = Monday, 6 = Sunday)
+day_index = calendar.weekday(y, m, d)
+
+# 3. Convert the index to the day name and print in uppercase
+print(calendar.day_name[day_index].upper())

@@ -1,0 +1,14 @@
+# Read the number of test cases
+n = int(input())
+
+for _ in range(n):
+    try:
+        # Read a and b, split them, and try to perform division
+        a, b = input().split()
+        print(int(a) // int(b))
+    except ZeroDivisionError as e:
+        # Handle division by zero
+        print("Error Code:", e)
+    except ValueError as e:
+        # Handle non-integer inputs
+        print("Error Code:", e)

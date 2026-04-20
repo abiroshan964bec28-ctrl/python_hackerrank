@@ -1,0 +1,22 @@
+import math
+
+# Input reading
+N = int(input())
+letters = input().split()
+K = int(input())
+
+# 1. Count how many letters are NOT 'a'
+m = len([char for char in letters if char != 'a'])
+
+# 2. Total ways to pick K elements from N
+total_combinations = math.comb(N, K)
+
+# 3. Ways to pick K elements from only non-'a' letters
+unfavorable_combinations = math.comb(m, K)
+
+# 4. Calculate probability
+probability_no_a = unfavorable_combinations / total_combinations
+ans = 1 - probability_no_a
+
+# Output formatted to 4 decimal places (as per sample output)
+print(f"{ans:.4f}")

@@ -18,3 +18,4 @@ for _ in range(n):
         break
 
 print(is_strict_superset)
+

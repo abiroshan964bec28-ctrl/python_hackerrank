@@ -1,0 +1,30 @@
+import sys
+
+def solve():
+    # Reading all input at once for speed with large constraints
+    input_data = sys.stdin.read().split()
+    
+    if not input_data:
+        return
+
+    n = int(input_data[0])
+    words = input_data[1:]
+
+    # A dictionary to store the count of each word
+    # In Python 3.7+, dictionaries preserve insertion order
+    word_counts = {}
+
+    for word in words:
+        if word in word_counts:
+            word_counts[word] += 1
+        else:
+            word_counts[word] = 1
+
+    # First line: Number of distinct words
+    print(len(word_counts))
+
+    # Second line: Number of occurrences in order of appearance
+    print(*(word_counts.values()))
+
+if __name__ == "__main__":
+    solve()

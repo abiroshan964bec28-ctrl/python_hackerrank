@@ -1,0 +1,55 @@
+
+# 3 ham chuyen ve octal, hexadecimal, binary
+def decimal_to_octal(decimal):
+    key = []
+    while decimal != 0:
+        key.append(str(decimal %8))
+        decimal = decimal //8
+    key = key[::-1]
+    return "".join(key)
+
+def decimal_to_hexadecimal(decimal):
+    key = []
+    while decimal != 0:
+        if decimal %16 == 10:
+            key.append("A")
+        elif decimal %16 == 11:
+            key.append("B")
+        elif decimal %16 == 12:
+            key.append("C")
+        elif decimal %16 == 13:
+            key.append("D")
+        elif decimal %16 == 14:
+            key.append("E")
+        elif decimal %16 == 15:
+            key.append("F")
+        else:
+            key.append(str(decimal %16))
+        decimal = decimal //16
+    key = key[::-1]
+    return "".join(key)
+
+def decimal_to_binary(decimal):
+    key = []
+    while decimal != 0:
+        key.append(str(decimal %2))
+        decimal = decimal //2
+    key = key[::-1]
+    return "".join(key)
+    
+# code
+def print_formatted(number):
+    decimal = []
+    octal = []
+    hexadecimal = []
+    binary = []
+    for i in range(number):
+        decimal.append(i + 1)
+        octal.append(decimal_to_octal(i + 1))
+        hexadecimal.append((decimal_to_hexadecimal(i + 1)))
+        binary.append(decimal_to_binary(i + 1))
+    space = len(str(decimal_to_binary(number)))
+    
+    for i in range(number):
+        print(f"{decimal[i]:>{space}} {octal[i]:>{space}} {hexadecimal[i]:>{space}} {binary[i]:>{space}}")
+

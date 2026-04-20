@@ -1,0 +1,33 @@
+from collections import deque
+
+def solve():
+    # Read the number of cubes
+    n = int(input())
+    # Use a deque for efficient popping from both ends
+    blocks = deque(map(int, input().split()))
+    
+    # Initialize the current top with a very large value
+    current_top = float('inf')
+    possible = True
+    
+    while blocks:
+        # 1. Compare the leftmost and rightmost cubes
+        # 2. Pick the larger of the two
+        if blocks[0] >= blocks[-1]:
+            pick = blocks.popleft()
+        else:
+            pick = blocks.pop()
+            
+        # 3. Check if the picked cube can fit on the current top
+        if pick <= current_top:
+            current_top = pick
+        else:
+            possible = False
+            break
+            
+    print("Yes" if possible else "No")
+
+# Read number of test cases
+t = int(input())
+for _ in range(t):
+    solve()

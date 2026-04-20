@@ -1,0 +1,13 @@
+from itertools import product
+
+# Reading input for list A and B
+# map(int, ...) converts the string elements to integers
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+# Compute the cartesian product AxB
+result = list(product(A, B))
+
+# Print the result as space-separated tuples
+# The * operator unpacks the list for the print function
+print(*result)

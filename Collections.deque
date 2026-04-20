@@ -1,0 +1,25 @@
+from collections import deque
+
+# Initialize an empty deque
+d = deque()
+
+# Read the number of operations
+n = int(input())
+
+# Iterate through each operation
+for _ in range(n):
+    # Split the input into command and optional value
+    input_list = input().split()
+    command = input_list[0]
+    
+    if command == "append":
+        d.append(input_list[1])
+    elif command == "appendleft":
+        d.appendleft(input_list[1])
+    elif command == "pop":
+        d.pop()
+    elif command == "popleft":
+        d.popleft()
+
+# Print the final space-separated elements
+print(*(d))
